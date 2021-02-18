@@ -26,6 +26,10 @@ class _UsersUIState extends State<UsersUI> {
       ),
       body: Column(
         children: <Widget>[
+          FlatButton(
+            onPressed: onHandlePressedButton,
+            child: Text("Get Users"),
+          ),
           Expanded(
             flex: 2,
             child: ListView.builder(
@@ -40,6 +44,8 @@ class _UsersUIState extends State<UsersUI> {
       ),
     );
   }
+
+  void onHandlePressedButton() {}
 
   void getApiUsers() async {
     final userRepo = UsersRepo();

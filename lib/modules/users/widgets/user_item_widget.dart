@@ -42,7 +42,6 @@ class UserItemWidget extends StatelessWidget {
                   ),
                   Text(
                     user.email,
-                    style: TextStyle(fontSize: 20),
                   )
                 ],
               )
