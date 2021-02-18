@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fetch/models/user.dart';
 import 'package:flutter_fetch/modules/users/widgets/user_item_widget.dart';
-import 'package:flutter_fetch/resources/providers/api_jsonplaceholder_user.dart';
+import 'package:flutter_fetch/resources/repositories/users_repo.dart';
 
 class UsersUI extends StatefulWidget {
   UsersUI({Key key}) : super(key: key);
@@ -42,8 +42,8 @@ class _UsersUIState extends State<UsersUI> {
   }
 
   void getApiUsers() async {
-    final apiJsonPlaceHolderUser = ApiJsonplaceholderUser();
-    final usersApi = await apiJsonPlaceHolderUser.getUsers();
+    final userRepo = UsersRepo();
+    final usersApi = await userRepo.getUsers();
     this.setState(() {
       users = usersApi;
     });
